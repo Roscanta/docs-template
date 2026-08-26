@@ -1,0 +1,145 @@
+[
+  {
+    "kind": "rest",
+    "category": "wallet-api",
+    "methodName": "getLedgerGrow",
+    "specPath": "specs/rest/wallet-api.openapi.json",
+    "slug": [
+      "api-reference",
+      "wallet-api",
+      "getLedgerGrow"
+    ]
+  },
+  {
+    "kind": "rpc-l1",
+    "category": "solana-api",
+    "methodName": "getBlock",
+    "specPath": "specs/rpc/l1/solana.openrpc.json",
+    "slug": [
+      "api-reference",
+      "solana-api",
+      "getBlock"
+    ]
+  },
+  {
+    "kind": "rpc-evm",
+    "category": "arbitrum-api",
+    "methodName": "debug_traceBlockByHash",
+    "specPath": "specs/rpc/evm/generated/arbitrum.openrpc.json",
+    "slug": [
+      "api-reference",
+      "arbitrum-api",
+      "debug_traceBlockByHash"
+    ]
+  },
+  {
+    "kind": "rpc-evm",
+    "category": "arbitrum-api",
+    "methodName": "eth_call",
+    "specPath": "specs/rpc/evm/generated/arbitrum.openrpc.json",
+    "slug": [
+      "api-reference",
+      "arbitrum-api",
+      "eth_call"
+    ]
+  },
+  {
+    "kind": "rpc-evm",
+    "category": "arbitrum-api",
+    "methodName": "eth_getBalance",
+    "specPath": "specs/rpc/evm/generated/arbitrum.openrpc.json",
+    "slug": [
+      "api-reference",
+      "arbitrum-api",
+      "eth_getBalance"
+    ]
+  },
+  {
+    "kind": "rpc-evm",
+    "category": "arbitrum-api",
+    "methodName": "eth_blockNumber",
+    "specPath": "specs/rpc/evm/generated/arbitrum.openrpc.json",
+    "slug": [
+      "api-reference",
+      "arbitrum-api",
+      "eth_blockNumber"
+    ]
+  },
+  {
+    "kind": "rpc-evm",
+    "category": "ethereum-api",
+    "methodName": "debug_traceBlockByHash",
+    "specPath": "specs/rpc/evm/generated/ethereum.openrpc.json",
+    "slug": [
+      "api-reference",
+      "ethereum-api",
+      "debug_traceBlockByHash"
+    ]
+  },
+  {
+    "kind": "rpc-evm",
+    "category": "ethereum-api",
+    "methodName": "eth_call",
+    "specPath": "specs/rpc/evm/generated/ethereum.openrpc.json",
+    "slug": [
+      "api-reference",
+      "ethereum-api",
+      "eth_call"
+    ]
+  },
+  {
+    "kind": "rpc-evm",
+    "category": "ethereum-api",
+    "methodName": "eth_getBalance",
+    "specPath": "specs/rpc/evm/generated/ethereum.openrpc.json",
+    "slug": [
+      "api-reference",
+      "ethereum-api",
+      "eth_getBalance"
+    ]
+  },
+  {
+    "kind": "rpc-evm",
+    "category": "ethereum-api",
+    "methodName": "eth_blockNumber",
+    "specPath": "specs/rpc/evm/generated/ethereum.openrpc.json",
+    "slug": [
+      "api-reference",
+      "ethereum-api",
+      "eth_blockNumber"
+    ]
+  },
+  {
+    "kind": "rpc-evm",
+    "category": "polygon-api",
+    "methodName": "eth_call",
+    "specPath": "specs/rpc/evm/generated/polygon.openrpc.json",
+    "slug": [
+      "api-reference",
+      "polygon-api",
+      "eth_call"
+    ]
+  },
+  {
+    "kind": "rpc-evm",
+    "category": "polygon-api",
+    "methodName": "eth_getBalance",
+    "specPath": "specs/rpc/evm/generated/polygon.openrpc.json",
+    "slug": [
+      "api-reference",
+      "polygon-api",
+      "eth_getBalance"
+    ]
+  },
+  {
+    "kind": "rpc-evm",
+    "category": "polygon-api",
+    "methodName": "eth_blockNumber",
+    "specPath": "specs/rpc/evm/generated/polygon.openrpc.json",
+    "slug": [
+      "api-reference",
+      "polygon-api",
+      "eth_blockNumber"
+    ]
+  }
+]

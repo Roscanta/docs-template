@@ -1,0 +1,13 @@
+{
+  "index": {
+    "display": "hidden"
+  },
+  "guides": {
+    "title": "Guides",
+    "type": "page"
+  },
+  "api-reference": {
+    "title": "API Reference",
+    "type": "page"
+  }
+}

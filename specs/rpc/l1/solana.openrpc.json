@@ -1,0 +1,90 @@
+{
+  "openrpc": "1.2.6",
+  "info": { "title": "dRPC Solana RPC API", "version": "1.0.0" },
+  "network": "solana",
+  "methods": [
+    {
+      "name": "getBlock",
+      "description": "Retrieves detailed information about a specific block",
+      "cu": 20,
+      "useCases": [
+        "Retrieve detailed block data for analysis",
+        "Monitor transaction details within specific blocks for auditing",
+        "Extract transaction data for blockchain application development"
+      ],
+      "constraints": [
+        "Requires valid block number parameter",
+        "Network latency may delay response time",
+        "High traffic may lead to rate limiting"
+      ],
+      "params": [
+        {
+          "paramName": "blockNumber",
+          "type": "string",
+          "paramDescription": "This describes the block number to fetch the transaction by."
+        },
+        {
+          "paramName": "config",
+          "type": "object",
+          "paramDescription": "Configuration object containing optional parameters:",
+          "childrenParams": [
+            { "paramName": "encoding", "type": "string", "paramDescription": "Specifies the data encoding for each returned transaction. Options include: json, jsonParsed, base58, base64" },
+            { "paramName": "transactionDetails", "type": "string", "paramDescription": "Determines the level of transaction detail returned. Options include: full, signatures, none" },
+            { "paramName": "rewards", "type": "boolean", "paramDescription": "Indicates whether to include the rewards array" },
+            { "paramName": "commitment", "type": "string", "paramDescription": "Sets the commitment level for the blocks queried. Valid options are: finalized, confirmed, processed" },
+            { "paramName": "minContextSlot", "type": "object", "paramDescription": "The minimum slot number at which the request can be evaluated." }
+          ]
+        }
+      ],
+      "result": {
+        "paramName": "result",
+        "type": "string",
+        "paramDescription": "Contains detailed information about the block",
+        "childrenParamsType": "object",
+        "childrenParams": [
+          { "paramName": "blockHeight", "type": "integer", "paramDescription": "The height of the block in the blockchain" },
+          { "paramName": "blockTime", "type": "int64", "paramDescription": "The timestamp of the block. null indicates that the time is not available." },
+          { "paramName": "blockhash", "type": "string", "paramDescription": "The unique identifier (hash) of the block." },
+          { "paramName": "parentSlot", "type": "integer", "paramDescription": "The slot number of the parent block." },
+          { "paramName": "previousBlockhash", "type": "string", "paramDescription": "The hash of the previous block in the chain." },
+          {
+            "paramName": "transactions",
+            "type": "array_of_objects",
+            "paramDescription": "A list of transactions included in the block.",
+            "childrenParamsType": "object",
+            "childrenParams": [
+              {
+                "paramName": "meta",
+                "type": "object",
+                "paramDescription": "Metadata about the transaction",
+                "childrenParamsType": "object",
+                "childrenParams": [
+                  { "paramName": "err", "type": "object", "paramDescription": "Error information, null if no error." },
+                  { "paramName": "fee", "type": "uint64", "paramDescription": "Transaction fee in lamports." },
+                  { "paramName": "innerInstructions", "type": "array", "paramDescription": "List of inner instructions." },
+                  { "paramName": "logMessages", "type": "array", "paramDescription": "Log messages from the transaction execution." },
+                  { "paramName": "postBalances", "type": "array", "paramDescription": "Balances of accounts after the transaction." },
+                  { "paramName": "postTokenBalances", "type": "array", "paramDescription": "Token balances of accounts after the transaction" },
+                  { "paramName": "preBalances", "type": "array", "paramDescription": "Balances of accounts before the transaction." },
+                  { "paramName": "preTokenBalances", "type": "array", "paramDescription": "Token balances of accounts before the transaction" },
+                  { "paramName": "status", "type": "array" }
+                ]
+              },
+              { "paramName": "version", "type": "number", "paramDescription": "The version of the transaction. Undefined if maxSupportedTransactionVersion was not set." },
+              { "paramName": "transaction", "type": "object", "paramDescription": "Details of the transaction" },
+              { "paramName": "signatures", "type": "array_of_strings", "paramDescription": "List of signatures for the transaction." }
+            ]
+          }
+        ]
+      },
+      "examples": {
+        "request": {
+          "jsonrpc": "2.0",
+          "id": 1,
+          "method": "getBlock",
+          "params": [430, { "encoding": "json", "transactionDetails": "full", "rewards": false }]
+        }
+      }
+    }
+  ]
+}

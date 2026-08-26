@@ -1,0 +1,23 @@
+# Filled by hand from Grafana. One entry per EVM network you serve.
+# Method names must match `name` fields in specs/rpc/evm/_base-methods.openrpc.json.
+#
+# Adding a network: add a key here, run `yarn generate:evm`.
+# Removing a method from a network: delete the line, run `yarn generate:evm`.
+
+ethereum:
+  - eth_call
+  - eth_getBalance
+  - eth_blockNumber
+  - debug_traceBlockByHash
+
+polygon:
+  - eth_call
+  - eth_getBalance
+  - eth_blockNumber
+  # debug_traceBlockByHash intentionally omitted — not supported on this network
+
+arbitrum:
+  - eth_call
+  - eth_getBalance
+  - eth_blockNumber
+  - debug_traceBlockByHash

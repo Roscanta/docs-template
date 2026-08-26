@@ -1,0 +1,6 @@
+# RPC/REST base endpoint per category. Filled by hand, same spirit as network-support.yaml.
+ethereum-api: "https://lb.drpc.org/ogrpc?network=ethereum"
+polygon-api: "https://lb.drpc.org/ogrpc?network=polygon"
+arbitrum-api: "https://lb.drpc.org/ogrpc?network=arbitrum"
+solana-api: "https://lb.drpc.org/ogrpc?network=solana"
+wallet-api: "https://lb.drpc.live/lambda"

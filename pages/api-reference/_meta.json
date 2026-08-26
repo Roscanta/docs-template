@@ -1,0 +1,18 @@
+{
+  "index": "Welcome",
+  "arbitrum-api": {
+    "display": "hidden"
+  },
+  "ethereum-api": {
+    "display": "hidden"
+  },
+  "polygon-api": {
+    "display": "hidden"
+  },
+  "solana-api": {
+    "display": "hidden"
+  },
+  "wallet-api": {
+    "display": "hidden"
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "openrpc": "1.2.6",
+  "info": {
+    "title": "dRPC polygon JSON-RPC API",
+    "version": "1.0.0"
+  },
+  "network": "polygon",
+  "methods": [
+    {
+      "name": "eth_call",
+      "description": "Executes a new message call immediately without creating a transaction on the blockchain.",
+      "cu": 20,
+      "useCases": [
+        "Simulate contract calls before sending a transaction",
+        "Read on-chain state without gas cost"
+      ],
+      "constraints": [
+        "Does not modify blockchain state"
+      ],
+      "params": [
+        {
+          "paramName": "transaction",
+          "type": "object",
+          "paramDescription": "The transaction call object.",
+          "childrenParamsType": "string",
+          "childrenParams": [
+            {
+              "paramName": "to",
+              "type": "string",
+              "paramDescription": "Address the transaction is directed to."
+            },
+            {
+              "paramName": "data",
+              "type": "string",
+              "paramDescription": "Hash of the method signature and encoded parameters."
+            }
+          ]
+        },
+        {
+          "paramName": "blockTag",
+          "type": "string",
+          "paramDescription": "Block number or tag, e.g. 'latest'."
+        }
+      ],
+      "result": {
+        "paramName": "result",
+        "type": "string",
+        "paramDescription": "The return value of the executed contract call."
+      },
+      "examples": {
+        "request": {
+          "jsonrpc": "2.0",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x...",
+              "data": "0x..."
+            },
+            "latest"
+          ],
+          "id": 1
+        }
+      },
+      "networks": [
+        "polygon"
+      ]
+    },
+    {
+      "name": "eth_getBalance",
+      "description": "Returns the balance of the account of given address.",
+      "cu": 10,
+      "useCases": [
+        "Check wallet balances",
+        "Verify funds before a transaction"
+      ],
+      "constraints": [],
+      "params": [
+        {
+          "paramName": "address",
+          "type": "string",
+          "paramDescription": "Address to check for balance."
+        },
+        {
+          "paramName": "blockTag",
+          "type": "string",
+          "paramDescription": "Block number or tag, e.g. 'latest'."
+        }
+      ],
+      "result": {
+        "paramName": "result",
+        "type": "string",
+        "paramDescription": "Integer of the current balance in wei."
+      },
+      "examples": {
+        "request": {
+          "jsonrpc": "2.0",
+          "method": "eth_getBalance",
+          "params": [
+            "0x...",
+            "latest"
+          ],
+          "id": 1
+        }
+      },
+      "networks": [
+        "polygon"
+      ]
+    },
+    {
+      "name": "eth_blockNumber",
+      "description": "Returns the number of the most recent block.",
+      "cu": 5,
+      "useCases": [
+        "Poll chain head",
+        "Determine confirmation depth"
+      ],
+      "constraints": [],
+      "params": [],
+      "result": {
+        "paramName": "result",
+        "type": "string",
+        "paramDescription": "Integer of the current block number."
+      },
+      "examples": {
+        "request": {
+          "jsonrpc": "2.0",
+          "method": "eth_blockNumber",
+          "params": [],
+          "id": 1
+        }
+      },
+      "networks": [
+        "polygon"
+      ]
+    }
+  ]
+}

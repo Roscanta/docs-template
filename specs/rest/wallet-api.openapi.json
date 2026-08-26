@@ -1,0 +1,42 @@
+{
+  "openapi": "3.1.0",
+  "info": { "title": "dRPC Wallet API", "version": "1.0.0" },
+  "servers": [{ "url": "https://lb.drpc.live/lambda" }],
+  "operations": [
+    {
+      "name": "getLedgerGrow",
+      "httpMethod": "GET",
+      "path": "/{key}/v1/{protocol}/data/ledger/grow",
+      "description": "Returns APR growth data for a specific protocol.",
+      "cu": 3340,
+      "useCases": [
+        "Track APR changes over time and compare yield performance",
+        "Identify increasing or declining APR opportunities"
+      ],
+      "constraints": ["APR growth calculations depend on indexed historical protocol data"],
+      "pathParams": [
+        { "paramName": "key", "type": "string", "required": true, "paramDescription": "Your dRPC API key" },
+        { "paramName": "protocol", "type": "string", "required": true, "paramDescription": "Allowed: aave_v3, lido" }
+      ],
+      "response": [
+        { "paramName": "network", "type": "string", "required": true, "paramDescription": "Network name" },
+        { "paramName": "deposit_token", "type": "string", "required": true, "paramDescription": "Deposit token name" },
+        {
+          "paramName": "interest",
+          "type": "object",
+          "required": true,
+          "paramDescription": "Interest details",
+          "childrenParamsType": "object",
+          "childrenParams": [
+            { "paramName": "type", "type": "string", "required": true, "paramDescription": "Interest type (e.g., APY)" },
+            { "paramName": "value", "type": "number", "paramDescription": "Interest value" },
+            { "paramName": "currency", "type": "string", "required": true, "paramDescription": "Interest currency" }
+          ]
+        }
+      ],
+      "examples": {
+        "response": [{ "network": "string", "deposit_token": "string", "interest": { "type": "string", "value": 0, "currency": "string" } }]
+      }
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "drpc-docs-template",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "generate:evm": "tsx generators/generate-evm-specs.ts",
+    "generate:pages": "tsx generators/generate-pages.ts",
+    "generate:all": "yarn generate:evm && yarn generate:pages",
+    "migrate:tsx": "tsx generators/convert-tsx-method.ts"
+  },
+  "dependencies": {
+    "@mantine/code-highlight": "^7.9.1",
+    "@mantine/core": "^7.9.1",
+    "@mantine/hooks": "^7.9.1",
+    "@mantine/notifications": "^7.9.1",
+    "@tabler/icons-react": "^3.4.0",
+    "@types/react": "^18.0.28",
+    "clsx": "^2.1.1",
+    "next": "^13.5.6",
+    "next-themes": "^0.3.0",
+    "nextra": "^2.13.4",
+    "nextra-theme-docs": "^2.13.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "18.11.10",
+    "js-yaml": "^4.1.0",
+    "tsx": "^4.16.0",
+    "typescript": "^5.0"
+  }
+}

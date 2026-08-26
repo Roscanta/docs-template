@@ -1,0 +1,6 @@
+{
+  "debug_traceBlockByHash": "debug_traceBlockByHash",
+  "eth_call": "eth_call",
+  "eth_getBalance": "eth_getBalance",
+  "eth_blockNumber": "eth_blockNumber"
+}
