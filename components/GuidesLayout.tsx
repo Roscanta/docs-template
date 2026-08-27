@@ -9,7 +9,8 @@ interface GuidesLayoutProps {
 }
 
 export function GuidesLayout({ pageMap, route, children }: GuidesLayoutProps) {
-  const tree: PageTreeNode[] = buildPageTree(pageMap);
+  const guidesFolder = pageMap.find((item: any) => item.kind === "Folder" && item.name === "guides");
+  const tree: PageTreeNode[] = buildPageTree(guidesFolder?.children ?? []);
 
   return (
     <div className="docs-shell">
