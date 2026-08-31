@@ -1,6 +1,9 @@
 {
   "openrpc": "1.2.6",
-  "info": { "title": "dRPC Solana RPC API", "version": "1.0.0" },
+  "info": {
+    "title": "dRPC Solana RPC API",
+    "version": "1.0.0"
+  },
   "network": "solana",
   "methods": [
     {
@@ -28,11 +31,31 @@
           "type": "object",
           "paramDescription": "Configuration object containing optional parameters:",
           "childrenParams": [
-            { "paramName": "encoding", "type": "string", "paramDescription": "Specifies the data encoding for each returned transaction. Options include: json, jsonParsed, base58, base64" },
-            { "paramName": "transactionDetails", "type": "string", "paramDescription": "Determines the level of transaction detail returned. Options include: full, signatures, none" },
-            { "paramName": "rewards", "type": "boolean", "paramDescription": "Indicates whether to include the rewards array" },
-            { "paramName": "commitment", "type": "string", "paramDescription": "Sets the commitment level for the blocks queried. Valid options are: finalized, confirmed, processed" },
-            { "paramName": "minContextSlot", "type": "object", "paramDescription": "The minimum slot number at which the request can be evaluated." }
+            {
+              "paramName": "encoding",
+              "type": "string",
+              "paramDescription": "Specifies the data encoding for each returned transaction. Options include: json, jsonParsed, base58, base64"
+            },
+            {
+              "paramName": "transactionDetails",
+              "type": "string",
+              "paramDescription": "Determines the level of transaction detail returned. Options include: full, signatures, none"
+            },
+            {
+              "paramName": "rewards",
+              "type": "boolean",
+              "paramDescription": "Indicates whether to include the rewards array"
+            },
+            {
+              "paramName": "commitment",
+              "type": "string",
+              "paramDescription": "Sets the commitment level for the blocks queried. Valid options are: finalized, confirmed, processed"
+            },
+            {
+              "paramName": "minContextSlot",
+              "type": "object",
+              "paramDescription": "The minimum slot number at which the request can be evaluated."
+            }
           ]
         }
       ],
@@ -42,11 +65,31 @@
         "paramDescription": "Contains detailed information about the block",
         "childrenParamsType": "object",
         "childrenParams": [
-          { "paramName": "blockHeight", "type": "integer", "paramDescription": "The height of the block in the blockchain" },
-          { "paramName": "blockTime", "type": "int64", "paramDescription": "The timestamp of the block. null indicates that the time is not available." },
-          { "paramName": "blockhash", "type": "string", "paramDescription": "The unique identifier (hash) of the block." },
-          { "paramName": "parentSlot", "type": "integer", "paramDescription": "The slot number of the parent block." },
-          { "paramName": "previousBlockhash", "type": "string", "paramDescription": "The hash of the previous block in the chain." },
+          {
+            "paramName": "blockHeight",
+            "type": "integer",
+            "paramDescription": "The height of the block in the blockchain"
+          },
+          {
+            "paramName": "blockTime",
+            "type": "int64",
+            "paramDescription": "The timestamp of the block. null indicates that the time is not available."
+          },
+          {
+            "paramName": "blockhash",
+            "type": "string",
+            "paramDescription": "The unique identifier (hash) of the block."
+          },
+          {
+            "paramName": "parentSlot",
+            "type": "integer",
+            "paramDescription": "The slot number of the parent block."
+          },
+          {
+            "paramName": "previousBlockhash",
+            "type": "string",
+            "paramDescription": "The hash of the previous block in the chain."
+          },
           {
             "paramName": "transactions",
             "type": "array_of_objects",
@@ -59,20 +102,67 @@
                 "paramDescription": "Metadata about the transaction",
                 "childrenParamsType": "object",
                 "childrenParams": [
-                  { "paramName": "err", "type": "object", "paramDescription": "Error information, null if no error." },
-                  { "paramName": "fee", "type": "uint64", "paramDescription": "Transaction fee in lamports." },
-                  { "paramName": "innerInstructions", "type": "array", "paramDescription": "List of inner instructions." },
-                  { "paramName": "logMessages", "type": "array", "paramDescription": "Log messages from the transaction execution." },
-                  { "paramName": "postBalances", "type": "array", "paramDescription": "Balances of accounts after the transaction." },
-                  { "paramName": "postTokenBalances", "type": "array", "paramDescription": "Token balances of accounts after the transaction" },
-                  { "paramName": "preBalances", "type": "array", "paramDescription": "Balances of accounts before the transaction." },
-                  { "paramName": "preTokenBalances", "type": "array", "paramDescription": "Token balances of accounts before the transaction" },
-                  { "paramName": "status", "type": "array" }
+                  {
+                    "paramName": "err",
+                    "type": "object",
+                    "paramDescription": "Error information, null if no error."
+                  },
+                  {
+                    "paramName": "fee",
+                    "type": "uint64",
+                    "paramDescription": "Transaction fee in lamports."
+                  },
+                  {
+                    "paramName": "innerInstructions",
+                    "type": "array",
+                    "paramDescription": "List of inner instructions."
+                  },
+                  {
+                    "paramName": "logMessages",
+                    "type": "array",
+                    "paramDescription": "Log messages from the transaction execution."
+                  },
+                  {
+                    "paramName": "postBalances",
+                    "type": "array",
+                    "paramDescription": "Balances of accounts after the transaction."
+                  },
+                  {
+                    "paramName": "postTokenBalances",
+                    "type": "array",
+                    "paramDescription": "Token balances of accounts after the transaction"
+                  },
+                  {
+                    "paramName": "preBalances",
+                    "type": "array",
+                    "paramDescription": "Balances of accounts before the transaction."
+                  },
+                  {
+                    "paramName": "preTokenBalances",
+                    "type": "array",
+                    "paramDescription": "Token balances of accounts before the transaction"
+                  },
+                  {
+                    "paramName": "status",
+                    "type": "array"
+                  }
                 ]
               },
-              { "paramName": "version", "type": "number", "paramDescription": "The version of the transaction. Undefined if maxSupportedTransactionVersion was not set." },
-              { "paramName": "transaction", "type": "object", "paramDescription": "Details of the transaction" },
-              { "paramName": "signatures", "type": "array_of_strings", "paramDescription": "List of signatures for the transaction." }
+              {
+                "paramName": "version",
+                "type": "number",
+                "paramDescription": "The version of the transaction. Undefined if maxSupportedTransactionVersion was not set."
+              },
+              {
+                "paramName": "transaction",
+                "type": "object",
+                "paramDescription": "Details of the transaction"
+              },
+              {
+                "paramName": "signatures",
+                "type": "array_of_strings",
+                "paramDescription": "List of signatures for the transaction."
+              }
             ]
           }
         ]
@@ -82,7 +172,86 @@
           "jsonrpc": "2.0",
           "id": 1,
           "method": "getBlock",
-          "params": [430, { "encoding": "json", "transactionDetails": "full", "rewards": false }]
+          "params": [
+            430,
+            {
+              "encoding": "json",
+              "transactionDetails": "full",
+              "rewards": false
+            }
+          ]
+        },
+        "response": {
+          "jsonrpc": "2.0",
+          "result": {
+            "blockHeight": 428,
+            "blockTime": null,
+            "blockhash": "3Eq21vXNB5s86c62bVuUfTeaMif1N2kUqRPBmGRJhyTA",
+            "parentSlot": 429,
+            "previousBlockhash": "mfcyqEXB3DnHXki6KjjmZck6YjmZLvpAByy2fj4nh6B",
+            "transactions": [
+              {
+                "meta": {
+                  "err": null,
+                  "fee": 5000,
+                  "innerInstructions": [],
+                  "logMessages": [],
+                  "postBalances": [
+                    499998932500,
+                    26858640,
+                    1,
+                    1,
+                    1
+                  ],
+                  "postTokenBalances": [],
+                  "preBalances": [
+                    499998937500,
+                    26858640,
+                    1,
+                    1,
+                    1
+                  ],
+                  "preTokenBalances": [],
+                  "status": {
+                    "Ok": null
+                  }
+                },
+                "transaction": {
+                  "message": {
+                    "accountKeys": [
+                      "3UVYmECPPMZSCqWKfENfuoTv51fTDTWicX9xmBD2euKe",
+                      "AjozzgE83A3x1sHNUR64hfH7zaEBWeMaFuAN9kQgujrc",
+                      "SysvarS1otHashes111111111111111111111111111",
+                      "SysvarC1ock11111111111111111111111111111111",
+                      "Vote111111111111111111111111111111111111111"
+                    ],
+                    "header": {
+                      "numReadonlySignedAccounts": 0,
+                      "numReadonlyUnsignedAccounts": 3,
+                      "numRequiredSignatures": 1
+                    },
+                    "instructions": [
+                      {
+                        "accounts": [
+                          1,
+                          2,
+                          3,
+                          0
+                        ],
+                        "data": "37u9WtQpcm6ULa3WRQHmj49EPs4if7o9f1jSRVZpm2dvihR9C8jY4NqEwXUbLwx15HBSNcP1",
+                        "programIdIndex": 4
+                      }
+                    ],
+                    "recentBlockhash": "mfcyqEXB3DnHXki6KjjmZck6YjmZLvpAByy2fj4nh6B"
+                  },
+                  "signatures": [
+                    "2nBhEBYYvfaAe16UMNqRHre4YNSskvuYgx3M6E4JP1oDYvZEJHvoPzyUidNgNX5r9sTyN1J9UxtbCXy2rqYcuyuv"
+                  ]
+                }
+              }
+            ]
+          },
+          "id": 1
         }
       }
     }
